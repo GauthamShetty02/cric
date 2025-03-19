@@ -107,9 +107,38 @@
     .refresh-button:hover {
       background-color: #e0e0e0;
     }
+    .refresh-button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .refresh-info {
+      font-size: 10px;
+      color: #999;
+      text-align: right;
+      margin-top: 5px;
+    }
+    .refresh-notification {
+      position: fixed;
+      top: -50px;
+      left: 0;
+      right: 0;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      transition: top 0.5s;
+      z-index: 9999;
+    }
+    .refresh-notification.show {
+      top: 0;
+    }
   </style>
 </head>
 <body>
+  <div id="refresh-notification" class="refresh-notification">
+    Data refreshed successfully!
+  </div>
+
   <div class="header">
     <div class="header-title">RCB Match Tracker</div>
     <button id="refresh-button" class="refresh-button">Refresh</button>
@@ -122,6 +151,7 @@
   <div class="status-bar">
     <div id="status">Checking for matches...</div>
   </div>
+  <div class="refresh-info" id="refresh-info">Auto-refreshes every 1 minute</div>
 
   <script src="popup.js"></script>
 </body>
