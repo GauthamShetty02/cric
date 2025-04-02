@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RCB Match Tracker</title>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 350px;
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      margin: 0;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      background-color: #D50000;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .header-title {
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .match-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .match-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    .team-vs {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .vs {
+      font-weight: bold;
+      font-size: 16px;
+      color: #888;
+    }
+    .date-time {
+      color: #D50000;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .venue {
+      color: #666;
+      font-size: 12px;
+    }
+    .loading {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+    }
+    .error {
+      color: #D50000;
+      text-align: center;
+      padding: 20px;
+    }
+    .buy-tickets {
+      display: block;
+      background-color: #D50000;
+      color: white;
+      text-align: center;
+      padding: 8px 0;
+      border-radius: 4px;
+      text-decoration: none;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .buy-tickets:hover {
+      background-color: #B71C1C;
+    }
+    .status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 10px;
+      font-size: 12px;
+      color: #666;
+      border-top: 1px solid #eee;
+      margin-top: 10px;
+    }
+    .status-success {
+      color: green;
+    }
+    .status-error {
+      color: #D50000;
+    }
+    .refresh-button {
+      background-color: #f0f0f0;
+      border: none;
+      border-radius: 4px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .refresh-button:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-title">RCB Match Tracker</div>
+    <button id="refresh-button" class="refresh-button">Refresh</button>
+  </div>
+  
+  <div id="content">
+    <div class="loading">Loading upcoming matches...</div>
+  </div>
+  
+  <div class="status-bar">
+    <div id="status">Checking for matches...</div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
